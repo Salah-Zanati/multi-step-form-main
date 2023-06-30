@@ -1,0 +1,576 @@
+/*/> Global roles */
+:root {
+  --mian-transition: .3s;
+  /* Colors */
+  /* Primary */
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+  /* Neutral */
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+  /* font */
+  --ff-reg: ubuntu-regular;
+  --ff-med: ubuntu-medium;
+  --ff-bld: ubuntu-bold;
+}
+/* Font */
+/* Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu) */
+@font-face {
+  /* 700 */
+  font-family: ubuntu-bold;
+  src: url(../assets/fonts/Ubuntu-Bold.ttf);
+}
+@font-face {
+  /* 500 */
+  font-family: ubuntu-medium;
+  src: url(../assets/fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+  /* 400 */
+  font-family: ubuntu-regular;
+  src: url(../assets/fonts/Ubuntu-Regular.ttf);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff-reg);
+}
+*:focus {
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+button {
+  cursor: pointer;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--magnolia);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/** Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/** Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/** Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/*/< Global roles */
+/*/> Box div */
+.box {
+  display: flex;
+  width: 80vw;
+  max-width: 800px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: var(--white);
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .box {
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+}
+/*/> Step-links div */
+.steps-links {
+  flex-basis: 30%;
+  background-image: url(../assets/images/bg-sidebar-desktop.svg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 30px;
+}
+@media (max-width: 768px) {
+  .steps-links {
+    background-image: url(../assets/images/bg-sidebar-mobile.svg);
+    background-size: 100% auto;
+    border-radius: 0;
+  }
+}
+.steps-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+@media (max-width: 768px) {
+  .steps-links ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.steps-links ul li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.steps-links .step-num {
+  border: 1px solid var(--white);
+  color: white;
+  width: 30px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 50%;
+  font-family: var(--ff-med);
+  font-size: 12px;
+}
+.steps-links li .step-num.active {
+  line-height: 30px;
+  background-color: var(--light-blue);
+  color: black;
+  border: none;
+}
+.steps-links .step-link {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+@media (max-width: 768px) {
+  .steps-links .step-link {
+    display: none;
+  }
+}
+.steps-links .step-title {
+  text-transform: uppercase;
+  color: var(--cool-gray);
+  font-size: 12px;
+  font-weight: 400;
+}
+.steps-links .step-name {
+  color: var(--magnolia);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1.6px;
+  font-family: var(--ff-bld);
+}
+/*/< Step-links div */
+/*/> Setps-from div */
+.steps-form {
+  flex-basis: 70%;
+  height: 100%;
+  padding: 50px 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .steps-form {
+    align-items: center;
+  }
+}
+.steps-form .step {
+  display: none;
+}
+.steps-form .step.active {
+  display: block;
+  max-width: 400px;
+}
+/*/> Head div */
+.steps-form .step .head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.steps-form .step .head h1.title {
+  font-family: var(--ff-bld);
+  color: var(--marine-blue);
+}
+.steps-form .step .head p.des {
+  color: var(--cool-gray);
+  font-family: var(--ff-reg);
+}
+/*/< Head div */
+/*/> Setps-from div, Setp-1 */
+/*/> Inputs div */
+.steps-form .s-1 .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.steps-form .s-1 .inputs label {
+  margin-top: 15px;
+  text-transform: capitalize;
+  font-family: var(--ff-reg);
+  color: var(--marine-blue);
+  position: relative;
+}
+.steps-form .s-1 .inputs input {
+  padding: 12px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--light-gray);
+}
+.steps-form .s-1 .inputs input::placeholder {
+  color: var(--cool-gray);
+  font-family: var(--ff-bld);
+}
+.steps-form .s-1 .inputs input:focus {
+  border-color: var(--purplish-blue);
+}
+.steps-form .s-1 .inputs label.error::after {
+  content: "This field is required";
+  position: absolute;
+  color: var(--strawberry-red);
+  right: 0;
+  bottom: 0;
+  font-size: 12px;
+  font-family: var(--ff-bld);
+}
+.steps-form .s-1 .inputs label.error+input {
+  border-color: var(--strawberry-red);
+}
+@media (max-width: 768px) {
+  .steps-form {
+    padding: 10px;
+  }
+  .steps-form .step {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    top: -100px
+  }
+}
+/*/< Inputs div */
+/*/< Setps-from div, Setp-1 */
+/*/> Setps-from div, Setp-2 */
+.steps-form .s-2 .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.steps-form .s-2 .plans {
+  display: flex;
+  justify-content: stretch;
+  gap: 10px;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .steps-form .s-2 .plans {
+    flex-direction: column;
+  }
+}
+.steps-form .s-2 .plans .plan {
+  flex-basis: calc(100% / 3);
+  border: 1px solid var(--cool-gray);
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 450px;
+}
+@media (max-width: 768px) {
+  .steps-form .s-2 .plans .plan {
+    gap: 10px;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+.steps-form .s-2 .plans .plan:hover {
+  border-color: var(--purplish-blue);
+}
+.steps-form .s-2 .plans .plan.active {
+  background-color: var(--magnolia);
+  border-color: var(--purplish-blue);
+}
+.steps-form .s-2 .plans .plan .plan-name {
+  font-family: var(--ff-bld);
+  color: var(--marine-blue);
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.steps-form .s-2 .plans .plan .plan-price {
+  color: var(--cool-gray);
+  font-size: 14px;
+  position: relative;
+}
+.steps-form .s-2 .plans .plan .plan-price .free {
+  content: attr(free);
+  display: block;
+  font-size: 12px;
+  color: var(--marine-blue);
+}
+.steps-form .s-2 .plan-amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--alabaster);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.steps-form .s-2 .plan-amount span {
+  text-transform: capitalize;
+  font-family: var(--ff-med);
+  color: var(--cool-gray);
+}
+.steps-form .s-2 .plan-amount span.mon.active {
+  color: var(--marine-blue);
+}
+.steps-form .s-2 .plan-amount span.yr.active {
+  color: var(--marine-blue);
+}
+.steps-form .s-2 .plan-amount input[type="checkbox"] {
+  position: relative;
+}
+.steps-form .s-2 .plan-amount input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 16px;
+  background-color: var(--marine-blue);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.steps-form .s-2 .plan-amount input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  left: -30%;
+  top: 3px;
+  cursor: pointer;
+  transition: .3s;
+}
+.steps-form .s-2 .plan-amount input[type="checkbox"]:checked::after {
+  left: 60%;
+}
+/*/< Setps-from div, Setp-2 */
+/*/> Setps-from div, Setp-3 */
+.steps-form .s-3 .ons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 30px 0;
+}
+.steps-form .s-3 .ons .on {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.steps-form .s-3 .ons .on:hover {
+  border-color: var(--purplish-blue);
+}
+.steps-form .s-3 .ons .on.active {
+  background-color: var(--magnolia);
+  border-color: var(--purplish-blue);
+}
+.steps-form .s-3 .ons .on input {
+  accent-color: var(--purplish-blue);
+  width: 20px;
+  flex-basis: 10%;
+  position: relative;
+}
+.steps-form .s-3 .ons .on input::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid var(--light-gray);
+}
+.steps-form .s-3 .ons .on input:checked::after {
+  background-color: var(--purplish-blue);
+  border: none;
+}
+.steps-form .s-3 .ons .on input:checked:before {
+  content: url(../assets/images/icon-checkmark.svg);
+  position: absolute;
+  left: 0;
+  top: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.steps-form .s-3 .ons .on>div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.steps-form .s-3 .ons .on .on-title {
+  color: var(--marine-blue);
+  font-family: var(--ff-bld);
+  font-size: 14px;
+}
+.steps-form .s-3 .ons .on .on-des {
+  font-size: 14px;
+  color: var(--cool-gray);
+}
+.steps-form .s-3 .ons .on .on-price {
+  color: var(--purplish-blue);
+  font-size: 14px;
+}
+/*/< Setps-from div, Setp-3 */
+/*/> Setps-from div, Setp-4 */
+.steps-form .s-4 .plan,
+.steps-form .s-4 .servese,
+.steps-form .s-4 .total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.steps-form .s-4 .res {}
+.steps-form .s-4 hr {
+  border: none;
+  width: 100%;
+  height: .1px;
+  background-color: red;
+  background-color: var(--light-gray);
+}
+.steps-form .s-4 .serveces {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: var(--magnolia);
+  padding: 20px;
+  border-radius: 10px;
+}
+.steps-form .s-4 .plan {
+  align-items: center;
+}
+.steps-form .s-4 .plan .name-amount,
+.steps-form .s-4 .plan .name-amount * {
+  font-family: var(--ff-bld);
+  color: var(--marine-blue);
+}
+.steps-form .s-4 .plan .price,
+.steps-form .s-4 .plan .price * {
+  font-family: var(--ff-med);
+  color: var(--marine-blue);
+}
+.steps-form .s-4 .plan .change {
+  color: var(--cool-gray);
+  text-decoration: underline;
+  text-transform: capitalize;
+  font-size: 14px;
+  transition: .3s;
+  cursor: pointer;
+}
+.steps-form .s-4 .plan .change:hover {
+  color: var(--purplish-blue);
+}
+.steps-form .s-4 .servese {}
+.steps-form .s-4 .servese .serv-name,
+.steps-form .s-4 .total p {
+  color: var(--cool-gray);
+}
+.steps-form .s-4 .servese .serv-price,
+.steps-form .s-4 .servese .serv-price * {
+  font-family: var(--ff-med);
+  color: var(--marine-blue);
+}
+.steps-form .s-4 .total {
+  padding: 20px;
+}
+.steps-form .s-4 .total .total-price,
+.steps-form .s-4 .total .total-price * {
+  color: var(--purplish-blue);
+  font-family: var(--ff-bld);
+}
+/*/< Setps-from div, Setp-4 */
+.steps-form .btns {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+.steps-form .btns #next,
+.steps-form .btns #back {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-family: var(--ff-med);
+}
+.steps-form .btns #next {
+  background-color: var(--marine-blue);
+  color: white;
+  transition: .3s;
+}
+.steps-form .btns #next:hover {
+  background-color: hsl(213, 96%, 18%, 85%);
+}
+.steps-form .btns #next {}
+.steps-form .btns #back {
+  background-color: white;
+  color: var(--cool-gray);
+  transition: .3s;
+}
+.steps-form .s-1+.btns #back {
+  display: none;
+}
+.steps-form .btns #back:hover {
+  color: var(--marine-blue)
+}
+@media (max-width: 768px) {
+  .steps-form .btns {
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+  }
+}
+/*/< Setps-from div */
+/*/< Box div */

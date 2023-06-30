@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+  
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      position: absolute; bottom: 5px;
+      left: 5px;
+    }
+  
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+  <!--* Css Files -->
+  <link rel="stylesheet" href="css/main.css">
+  <!--* Javascript Files -->
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <div class="box">
+    <div class="steps-links">
+      <ul>
+        <li>
+          <p class="step-num active">1</p>
+          <div class="step-link">
+            <p class="step-title">step 1</p>
+            <p class="step-name">your info</p>
+          </div>
+        </li>
+        <li>
+          <p class="step-num">2</p>
+          <div class="step-link">
+            <p class="step-title">step 2</p>
+            <p class="step-name">select plan</p>
+          </div>
+        </li>
+        <li>
+          <p class="step-num">3</p>
+          <div class="step-link">
+            <p class="step-title">step 3</p>
+            <p class="step-name">add-ons</p>
+          </div>
+        </li>
+        <li>
+          <p class="step-num">4</p>
+          <div class="step-link">
+            <p class="step-title">step 4</p>
+            <p class="step-name">summary</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="steps-form">
+      <div class="step s-1">
+        <div class="head">
+          <h1 class="title">Personal info</h1>
+          <p class="des">Please prvide your name, email address, and phone number.</p>
+        </div>
+        <div class="inputs">
+          <label for="name">name</label>
+          <input id="name" type="text" placeholder="e.g. Salah Zanati">
+          <label for="email">email address</label>
+          <input id="email" type="text" placeholder="e.g. salahzanati0@gmail.com">
+          <label for="phone">phone number</label>
+          <input id="phoneNumber" type="text" placeholder="e.g. +963 935 351 061">
+        </div>
+      </div>
+      <div class="step s-2">
+        <div class="head">
+          <h1 class="title">Select your plan</h1>
+          <p class="des">You have the option of monthly or yearly billing.</p>
+        </div>
+        <div class="inputs">
+          <div class="plans">
+            <div class="plan active">
+              <img src="assets/images/icon-arcade.svg" alt="Arcade"></img>
+              <div>
+                <p class="plan-name">arcade</p>
+                <p class="plan-price" free="">$<sapn class="price">0</sapn>/<span class="amount">mo</span>
+                  <span class="free"></span>
+                </p>
+              </div>
+            </div>
+            <div class="plan">
+              <img src="assets/images/icon-advanced.svg" alt="Advanced">
+              <div>
+                <p class="plan-name">advanced</p>
+                <p class="plan-price" free="ddd">$<sapn class="price">0</sapn>/<span class="amount">mo</span><span
+                    class="free"></span></p>
+              </div>
+            </div>
+            <div class="plan">
+              <img src="assets/images/icon-pro.svg" alt="Por">
+              <div>
+                <p class="plan-name">pro</p>
+                <p class="plan-price" free="">$<sapn class="price">0</sapn>/<span class="amount">mo</span><span
+                    class="free"></span></p>
+              </div>
+            </div>
+          </div>
+          <div class="plan-amount">
+            <span class="mon active">monthly</span>
+            <input type="checkbox" name="planAmount" id="planAmount">
+            <span class="yr">yearly</span>
+          </div>
+        </div>
+      </div>
+      <div class="step  s-3">
+        <div class="head">
+          <h1 class="title">Pick add-ons</h1>
+          <p class="des">Add-ons help enchance your gaming experience.</p>
+        </div>
+        <div class="inputs">
+          <div class="ons">
+            <label class="on">
+              <input type="checkbox" id="onOS">
+              <div>
+                <p class="on-title">Online service</p>
+                <p class="on-des">Access to multiplayer games</p>
+              </div>
+              <p class="on-price">$<sapn class="price">0</sapn>/<span class="amount">mo</span><span class="free"></span>
+              </p>
+            </label>
+            <label class="on">
+              <input type="checkbox" id="onOS">
+              <div>
+                <p class="on-title">Larger storage</p>
+                <p class="on-des">Extra 1TB of cloud save</p>
+              </div>
+              <p class="on-price">$<sapn class="price">0</sapn>/<span class="amount">mo</span><span class="free"></span>
+              </p>
+            </label>
+            <label class="on">
+              <input type="checkbox" id="onOS">
+              <div>
+                <p class="on-title">Customizable profile</p>
+                <p class="on-des">Custom theme your profile</p>
+              </div>
+              <p class="on-price">$<sapn class="price">0</sapn>/<span class="amount">mo</span><span class="free"></span>
+              </p>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="step  s-4">
+        <div class="head">
+          <h1 class="title">Finishing up</h1>
+          <p class="des">Double-check everything looks Ok before confirming.</p>
+        </div>
+        <div class="inputs">
+          <div class="res">
+            <div class="serveces">
+              <div class="plan">
+                <div>
+                  <p class="name-amount">
+                    <span class="name">Pro</span>(<span class="amount">Yearly</span>)
+                  </p>
+                  <p class="change">change</p>
+                </div>
+                <p class="price">$<span class="num">0</span>/<span class="amount">mo</span></p>
+              </div>
+              <hr>
+            </div>
+            <div class="total">
+              <p>Total (per <span>year</span>)</p>
+              <div class="total-price">$<span class="num">0</span>/<span class="amount">mo</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button id="next">next step</button>
+        <button id="back">go back</button>
+      </div>
+    </div>
+    </div>
+    <footer>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/Salah-Zanati">Salah Zanati</a>.
+      </p>
+    </footer>
+</body>
+
+</html>
