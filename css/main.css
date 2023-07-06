@@ -207,17 +207,17 @@ body {
   max-width: 400px;
 }
 /*/> Head div */
-.steps-form .step .head {
+.step .head {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 15px;
 }
-.steps-form .step .head h1.title {
+.step h1.title {
   font-family: var(--ff-bld);
   color: var(--marine-blue);
 }
-.steps-form .step .head p.des {
+.step p.des {
   color: var(--cool-gray);
   font-family: var(--ff-reg);
 }
@@ -269,7 +269,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     position: relative;
-    top: -100px
+    top: -100px;
   }
 }
 /*/< Inputs div */
@@ -528,6 +528,24 @@ body {
   font-family: var(--ff-bld);
 }
 /*/< Setps-from div, Setp-4 */
+/*/> Setps-from div, Setp-5 */
+.steps-form .s-5.active {
+  display: flex !important;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  gap: 20px;
+}
+.steps-form .s-5 img {
+  width: 80px;
+}
+.steps-form .s-5.active+.btns {
+  display: none;
+}
+/*/< Setps-from div, Setp-5 */
 .steps-form .btns {
   display: flex;
   justify-content: space-between;

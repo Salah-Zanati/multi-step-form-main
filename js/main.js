@@ -42,8 +42,21 @@ let info = {
 	ons: [],
 };
 nextBtn.onclick = () => {
-	if (stepNum > 4) return;
+	if (stepNum > 5) return;
 	if (stepNum == 1) {
+		let error;
+		[nameInput, emailInput, phoneNumberInput].forEach((el) => {
+			if (el.value === "") {
+				document
+					.querySelector(`.s-1 .inputs label[for="${el.id}"]`)
+					.classList.add("error");
+				error = true;
+			} else
+				document
+					.querySelector(`.s-1 .inputs label[for="${el.id}"]`)
+					.classList.remove("error");
+		});
+		if (error) return;
 		info.theName = nameInput.value;
 		info.email = emailInput.value;
 		info.phone = phoneNumberInput.value;
@@ -106,9 +119,14 @@ function setActiveToLink() {
 	document.querySelectorAll(".steps-links .step-num").forEach((step) => {
 		step.classList.remove("active");
 	});
-	document
-		.querySelector(`.steps-links li:nth-child(${stepNum}) .step-num`)
-		.classList.add("active");
+	if (stepNum <= 4) {
+		document
+			.querySelector(`.steps-links li:nth-child(${stepNum}) .step-num`)
+			.classList.add("active");
+	} else
+		document
+			.querySelector(`.steps-links li:nth-child(4) .step-num`)
+			.classList.add("active");
 }
 // s-2
 
