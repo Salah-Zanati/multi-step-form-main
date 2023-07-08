@@ -45,17 +45,48 @@ nextBtn.onclick = () => {
 	if (stepNum > 5) return;
 	if (stepNum == 1) {
 		let error;
-		[nameInput, emailInput, phoneNumberInput].forEach((el) => {
-			if (el.value === "") {
-				document
-					.querySelector(`.s-1 .inputs label[for="${el.id}"]`)
-					.classList.add("error");
-				error = true;
-			} else
-				document
-					.querySelector(`.s-1 .inputs label[for="${el.id}"]`)
-					.classList.remove("error");
-		});
+		checkOnEmail =
+			/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+				emailInput.value
+			);
+		if (checkOnEmail) {
+			error = false;
+			document
+				.querySelector(`.s-1 .inputs label[for="${emailInput.id}"]`)
+				.classList.remove("error");
+		} else {
+			error = true;
+			document
+				.querySelector(`.s-1 .inputs label[for="${emailInput.id}"]`)
+				.classList.add("error");
+		}
+		error = checkOnEmail ? false : true;
+
+		checkOnName = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/.test(
+			nameInput.value
+		);
+		if (checkOnEmail) {
+			error = false;
+			document
+				.querySelector(`.s-1 .inputs label[for="${nameInput.id}"]`)
+				.classList.remove("error");
+		} else {
+			error = true;
+			document
+				.querySelector(`.s-1 .inputs label[for="${nameInput.id}"]`)
+				.classList.add("error");
+		}
+		error = checkOnName ? false : true;
+
+		if (phoneNumberInput.value === "") {
+			document
+				.querySelector(`.s-1 .inputs label[for="${phoneNumberInput.id}"]`)
+				.classList.add("error");
+			error = true;
+		} else
+			document
+				.querySelector(`.s-1 .inputs label[for="${phoneNumberInput.id}"]`)
+				.classList.remove("error");
 		if (error) return;
 		info.theName = nameInput.value;
 		info.email = emailInput.value;

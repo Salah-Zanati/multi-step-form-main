@@ -376,13 +376,13 @@ body {
   height: 10px;
   background-color: white;
   border-radius: 50%;
-  left: -30%;
+  left: -3px;
   top: 3px;
   cursor: pointer;
   transition: .3s;
 }
 .steps-form .s-2 .plan-amount input[type="checkbox"]:checked::after {
-  left: 60%;
+  left: 7px;
 }
 /*/< Setps-from div, Setp-2 */
 /*/> Setps-from div, Setp-3 */
