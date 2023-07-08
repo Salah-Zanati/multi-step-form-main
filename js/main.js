@@ -142,7 +142,6 @@ backBtn.onclick = () => {
 	document.querySelector(`.steps-form .s-${stepNum}`).classList.add("active");
 };
 function setActiveToLink() {
-	console.log(stepNum);
 	document.querySelectorAll(".steps-links .step-num").forEach((step) => {
 		step.classList.remove("active");
 	});
